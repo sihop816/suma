@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            width: 400px;
+            height: 400px;
+        }
+        .square {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+        .white {
+            background-color: white;
+        }
+        .black {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="board">
+        <!-- Create squares for chess board -->
+        ${Array.from({ length: 64 }, (_, i) => `<div class="square ${((Math.floor(i / 8) + i) % 2 === 0) ? 'white' : 'black')}"></div>`).join('')}
+    </div>
+</body>
+</html>
